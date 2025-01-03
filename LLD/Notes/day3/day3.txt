@@ -1,0 +1,82 @@
+
+
+
+S - single responsibility Principle
+O - open closed principle
+L - Liskov Substitution Principle
+I
+D
+
+The SOLID principles are a set of design principles in software engineering intended to make code
+ more maintainable, scalable, and robust. Here's an overview:
+
+1. Single Responsibility Principle (SRP)
+Definition: A class should have only one reason to change, meaning it should only have one responsibility.
+Explanation: Each class or module should handle a single piece of functionality.
+Example:
+Bad: A User class handles both user data and logging.
+Good: Split into User (data) and Logger (logging functionality).
+
+2. Open/Closed Principle (OCP)
+Definition: A class should be open for extension but closed for modification.
+Explanation: You should be able to add new functionality without altering existing code.
+Example:
+Use inheritance or composition to add features rather than editing existing classes.
+
+
+3. Liskov Substitution Principle (LSP)
+Definition: Objects of a superclass should be replaceable with objects of a subclass without altering
+ the correctness of the program.
+Explanation: A subclass should adhere to the behavior and expectations of its parent class.
+Example:
+Bad: A subclass that overrides methods in a way that changes expected behavior.
+Good: A subclass that extends functionality without breaking compatibility.
+
+BankAccount: Imagine a parking lot that can accommodate regular cars. Now, if you replace a regular
+car with an electric car, the parking lot should still function correctly. The electric car
+should be able to fit into the parking space, and the parking lot should be able to provide a
+charging station. If replacing a regular car with an electric car breaks the parking lot's
+functionality (e.g., no charging stations), then the parking lot is not adhering to the Liskov
+Substitution Principle.
+
+4. Interface Segregation Principle (ISP)
+Definition: A class should not be forced to implement interfaces it does not use.
+Explanation: Split large interfaces into smaller, specific ones.
+Example:
+Bad: A Printer interface requires methods for printing and scanning, even if a class only needs printing.
+Good: Split into Printable and Scannable interfaces.
+
+**Interface Segregation Principle** A client should never be forced to implement an
+* interface/class that it loesn't use, or clients shouldn't be forced to depend on methods they do
+* not use.
+* Example: Imagine a TV remote control.A basic TV remote has buttons like power, volume,
+* and channel control. Now, imagine if this remote also had buttons for making coffee, opening your
+* garage, and feeding your pet. That would be overwhelming and confusing, right ? You'd have to
+* navigate through buttons you never use to find the ones you actually need. The Interface
+* Segregation Principle suggests that it's better to have specialised remotes for specialised
+* tasks.
+
+5. Dependency Inversion Principle (DIP)
+Definition: High-level modules should not depend on low-level modules. Both should depend on abstractions.
+Explanation: Use interfaces or abstract classes to reduce coupling.
+Example:
+Bad: A Database class directly depends on a MySQLDatabase class.
+Good: Database depends on a DatabaseConnection interface, allowing swapping with PostgresDatabase or MongoDB.
+
+
+
+Benefits of SOLID Principles
+Maintainability: Code becomes easier to update and debug.
+Scalability: New features can be added without breaking existing ones.
+Testability: Smaller, well-defined classes make unit testing simpler.
+Flexibility: Encourages modular and reusable code.
+Adhering to these principles leads to better-designed software that is easier to manage and extend. 
+Let me know if you'd like detailed examples for any specific principle!
+
+
+LLD of Book my show 
+
+User
+booking 
+movie
+show time
